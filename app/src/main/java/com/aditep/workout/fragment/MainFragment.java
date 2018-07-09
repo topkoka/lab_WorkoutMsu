@@ -77,7 +77,29 @@ public class MainFragment extends Fragment {
         binding.listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(getActivity().getApplicationContext(), "" + workoutTypeDao.getName()[i], Toast.LENGTH_SHORT).show();
+                int id = i;
+                switch (id) {
+                    case 0:
+                        Toast.makeText(getActivity().getApplicationContext(), "" + workoutTypeDao.getName()[i], Toast.LENGTH_SHORT).show();
+                        getActivity().getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.contentContainer, ExerciseFragment.newInstance())
+                                .addToBackStack(null)
+                                .commit();
+                    case 1:
+                        Toast.makeText(getActivity().getApplicationContext(), "" + workoutTypeDao.getName()[i], Toast.LENGTH_SHORT).show();
+                    case 2:
+                        Toast.makeText(getActivity().getApplicationContext(), "" + workoutTypeDao.getName()[i], Toast.LENGTH_SHORT).show();
+                    case 3:
+                        Toast.makeText(getActivity().getApplicationContext(), "" + workoutTypeDao.getName()[i], Toast.LENGTH_SHORT).show();
+                    case 4:
+                        Toast.makeText(getActivity().getApplicationContext(), "" + workoutTypeDao.getName()[i], Toast.LENGTH_SHORT).show();
+                    case 5:
+                        Toast.makeText(getActivity().getApplicationContext(), "" + workoutTypeDao.getName()[i], Toast.LENGTH_SHORT).show();
+                    case 6:
+                        Toast.makeText(getActivity().getApplicationContext(), "" + workoutTypeDao.getName()[i], Toast.LENGTH_SHORT).show();
+
+                }
+
 
             }
         });
