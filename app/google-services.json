@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "759014588278",
+    "firebase_url": "https://fir-01msu.firebaseio.com",
+    "project_id": "fir-01msu",
+    "storage_bucket": "fir-01msu.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:759014588278:android:92315c5b2fa937e3",
+        "android_client_info": {
+          "package_name": "com.aditep.workout"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "759014588278-d02kfduo6osakdvp496pljhj8hvu8em0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aditep.workout",
+            "certificate_hash": "448b378ccbaeee46a1eaa973abd07917e3ca6676"
+          }
+        },
+        {
+          "client_id": "759014588278-8grvoi98ns1iun8lssc8ml1t2bgpu4m7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3C0XA85yPtgvzGkwrZY2OvnNAH5H4DfI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "759014588278-8grvoi98ns1iun8lssc8ml1t2bgpu4m7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
