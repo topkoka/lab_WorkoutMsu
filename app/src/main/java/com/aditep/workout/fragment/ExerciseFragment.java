@@ -4,40 +4,24 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.widget.DrawerLayout;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.Toast;
-
+import com.aditep.workout.databinding.FragmentExerciseBinding;
 import com.aditep.workout.R;
-import com.aditep.workout.adapter.MuscleTypeListAdapter;
-
-import com.aditep.workout.dao.WorkoutTypeDao;
-import com.aditep.workout.databinding.FragmentMainBinding;
-import com.inthecheesefactory.thecheeselibrary.manager.Contextor;
 
 
 /**
  * Created by nuuneoi on 11/16/2014.
  */
-public class MainFragment extends Fragment {
-    //Variables
-    FragmentMainBinding binding;
-    MuscleTypeListAdapter listAdapter;
-    WorkoutTypeDao workoutTypeDao;
-
-    /*******************
-     * Functions
-     *******************/
-    public MainFragment() {
+public class ExerciseFragment extends Fragment {
+    FragmentExerciseBinding binding;
+    public ExerciseFragment() {
         super();
     }
 
-    public static MainFragment newInstance() {
-        MainFragment fragment = new MainFragment();
+    public static ExerciseFragment newInstance() {
+        ExerciseFragment fragment = new ExerciseFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -47,6 +31,7 @@ public class MainFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         init(savedInstanceState);
+
         if (savedInstanceState != null)
             onRestoreInstanceState(savedInstanceState);
     }
@@ -55,7 +40,7 @@ public class MainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(
-                inflater, R.layout.fragment_main, container, false);
+                inflater, R.layout.fragment_exercise, container, false);
         View rootView = binding.getRoot();
         initInstances(rootView, savedInstanceState);
         return rootView;
@@ -67,21 +52,10 @@ public class MainFragment extends Fragment {
     }
 
     @SuppressWarnings("UnusedParameters")
-    private void initInstances(View rootView, final Bundle savedInstanceState) {
+    private void initInstances(View rootView, Bundle savedInstanceState) {
         // Init 'View' instance(s) with rootView.findViewById here
         // Note: State of variable initialized here could not be saved
         //       in onSavedInstanceState
-        workoutTypeDao = new WorkoutTypeDao();
-        listAdapter = new MuscleTypeListAdapter(getActivity().getApplicationContext(), workoutTypeDao.getName(), workoutTypeDao.getImge());
-        binding.listView.setAdapter(listAdapter);
-        binding.listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(getActivity().getApplicationContext(), "" + workoutTypeDao.getName()[i], Toast.LENGTH_SHORT).show();
-
-            }
-        });
-
     }
 
     @Override
@@ -95,17 +69,4 @@ public class MainFragment extends Fragment {
         // Restore Instance (Fragment level's variables) State here
     }
 
-    private void showToast(String text) {
-        Toast.makeText(Contextor.getInstance().getContext(),
-                text,
-                Toast.LENGTH_SHORT).show();
-    }
-
-    /**************
-     *  Listener Zone
-     **************/
-
-    /*************
-     *  Inner Class
-     *************/
 }

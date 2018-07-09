@@ -6,13 +6,12 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
 import com.aditep.workout.databinding.ListTypeMuscleBinding;
-import com.aditep.workout.dao.WorkoutTypedataDao;
 import com.aditep.workout.view.MuscleListType;
 
 public class MuscleTypeListAdapter extends BaseAdapter {
 
 
-    WorkoutTypedataDao dao;
+
     ListTypeMuscleBinding binding;
     Context mContext;
     String[] strNameArr;

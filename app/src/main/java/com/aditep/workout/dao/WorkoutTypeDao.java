@@ -1,6 +1,7 @@
 package com.aditep.workout.dao;
 
 
+import com.aditep.workout.R;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -8,27 +9,15 @@ import java.util.List;
 
 public class WorkoutTypeDao   {
 
-    @SerializedName("image_url")
-    @Expose
-    private String imageUrl;
-    @SerializedName("name")
-    @Expose
-    private String name;
+    int[] imge = {R.drawable.chest,R.drawable.back,R.drawable.leg,R.drawable.arm,R.drawable.shoulder,R.drawable.abs};
 
-    public String getImageUrl() {
-        return imageUrl;
+    public int[] getImge() {
+        return imge;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
-
-    public String getName() {
+    public String[] getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
+    String[] name = {"CHEST","BACK","LEGS","ARMS","SHOULDER","ABS"};
 }

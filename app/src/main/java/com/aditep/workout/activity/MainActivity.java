@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.aditep.workout.R;
 import com.aditep.workout.databinding.ActivityMainBinding;
+import com.aditep.workout.fragment.ExerciseFragment;
 import com.aditep.workout.fragment.MainFragment;
 
 public class MainActivity extends AppCompatActivity {
